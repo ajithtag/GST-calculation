@@ -1,0 +1,21 @@
+def calculate_gst(amount, gst_rate):
+    gst_amount = amount * (gst_rate / 100)
+    total_amount = amount + gst_amount
+    return gst_amount, total_amount
+
+def main():
+    try:
+        amount = float(input("Enter the amount: "))
+        gst_rate = float(input("Enter the GST rate in percentage: "))
+
+        gst_amount, total_amount = calculate_gst(amount, gst_rate)
+
+        print(f"\nOriginal Amount: {amount:.2f}")
+        print(f"GST Amount ({gst_rate}%): {gst_amount:.2f}")
+        print(f"Total Amount (including GST): {total_amount:.2f}")
+
+    except ValueError:
+        print("Invalid input. Please enter valid numeric values.")
+
+if __name__ == "__main__":
+    main()
